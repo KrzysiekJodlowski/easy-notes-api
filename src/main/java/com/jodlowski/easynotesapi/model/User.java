@@ -1,5 +1,6 @@
 package com.jodlowski.easynotesapi.model;
 
+import org.hibernate.annotations.ColumnTransformer;
 import javax.persistence.*;
 
 
@@ -12,6 +13,9 @@ public class User {
     @Column(name = "user_id")
     private Long userId;
     private String name;
+    @ColumnTransformer(read = "pgp_sym_decrypt_bytea(password, current_setting('encrypt.key'))",
+            write = "pgp_sym_encrypt(?, current_setting('encrypt.key'))")
+    @Column(columnDefinition = "bytea")
     private String password;
     @Column(name = "e_mail")
     private String eMail;
