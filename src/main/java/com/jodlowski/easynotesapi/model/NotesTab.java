@@ -2,6 +2,7 @@ package com.jodlowski.easynotesapi.model;
 
 import javax.persistence.*;
 
+
 @Entity
 @Table(name = "notes_tab")
 public class NotesTab {

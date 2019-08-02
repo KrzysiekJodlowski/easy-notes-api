@@ -1,5 +1,6 @@
 package com.jodlowski.easynotesapi.model;
 
+
 public enum ContentType {
-    TEXT, LIST, IMAGE
+    TEXT_CONTENT, LIST_CONTENT, IMAGE_CONTENT
 }
